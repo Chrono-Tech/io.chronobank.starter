@@ -9,13 +9,13 @@
 ## Setup
 
 Provide a correct subproject locations here:
-- [bin/build](io.chronobank.starter/tree/master/bin/build)
+- [bin/build](bin/build)
 
 Update this config file:
-- [ecosystem.config.js](io.chronobank.starter/tree/master/ecosystem.config.js)
+- [ecosystem.config.js](ecosystem.config.js)
 
 Setup Nginx proxy using this config as an example:
-- [etc/nginx/io.chronobank.conf](io.chronobank.starter/tree/master/etc/nginx/io.chronobank.conf)
+- [etc/nginx/io.chronobank.conf](etc/nginx/io.chronobank.conf)
 
 Run build using command:
 ```
