@@ -1,0 +1,14 @@
+rimraf ./io.chronobank.web
+rimraf ./io.chronobank.backend
+
+git clone --depth=1 git@github.com:ipavlenko/io.chronobank.web.git
+git clone --depth=1 git@github.com:ipavlenko/io.chronobank.backend.git
+
+cd ./io.chronobank.web
+yarn install
+npm run build
+cd ..
+
+cd ./io.chronobank.backend
+yarn install
+cd ..

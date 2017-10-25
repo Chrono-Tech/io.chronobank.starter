@@ -5,6 +5,7 @@
   "main": "ecosystem.config.js",
   "scripts": {
     "build": "/bin/bash ./bin/build",
+    "build:yarn": "/bin/bash ./bin/build-yarn",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
