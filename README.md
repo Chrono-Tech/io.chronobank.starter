@@ -4,6 +4,7 @@
 
 - Install node v8.4.0+, install npm 5.2.0+
 - Install and v3.4+ and launch mongodb service
+- Install solr v7.1.0+
 - Install pm2 globally
 
 ## Setup
@@ -35,6 +36,11 @@ If you need to make a dump:
 ```
 mongodump --db $MONGO_DATABASE_NAME --out=/path/to/arch/
 tar -zcvf /path/to/arch/$MONGO_DATABASE_NAME.tar.gz -C /path/to/arch/$MONGO_DATABASE_NAME .
+```
+
+Create SOLR collection:
+```
+sudo -u solr /opt/solr/bin/solr create -c io-chronobank
 ```
 
 ## Launch
