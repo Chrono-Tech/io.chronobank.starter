@@ -29,11 +29,13 @@ module.exports = {
       watch: true,
       env: {
         'PORT': 3001,
-        'NODE_ENV': 'development'
+        'NODE_ENV': 'development',
+	      'APP_ENDPOINT': 'http://backend.chronobank.tp.ntr1x.com/api/v1'
       },
       env_production: {
         'PORT': 3011,
-        'NODE_ENV': 'production'
+        'NODE_ENV': 'production',
+	      'APP_ENDPOINT': 'http://backend.chronobank.tp.ntr1x.com/api/v1'
       }
     }
   ]
