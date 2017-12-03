@@ -32,12 +32,14 @@ module.exports = {
       env: {
         'PORT': 3001,
         'NODE_ENV': 'development',
-	      'APP_ENDPOINT': 'http://backend.chronobank.tp.ntr1x.com/api/v1'
+	      'APP_ENDPOINT': 'http://backend.chronobank.tp.ntr1x.com/api/v1',
+        'IMAGES_ENDPOINT': 'http://files.chronobank.tp.ntr1x.com'
       },
       env_production: {
         'PORT': 3011,
         'NODE_ENV': 'production',
-	      'APP_ENDPOINT': 'http://backend.chronobank.tp.ntr1x.com/api/v1'
+	      'APP_ENDPOINT': 'http://backend.chronobank.tp.ntr1x.com/api/v1',
+        'IMAGES_ENDPOINT': 'http://files.chronobank.tp.ntr1x.com'
       }
     }
   ]
