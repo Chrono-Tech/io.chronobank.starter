@@ -16,4 +16,6 @@ RUN apt update && \
     cd ../io.chronobank.backend && \
     yarn install --unsafe-perm=true
 EXPOSE 3000 3001 3010 3011
+RUN echo "test"
 CMD pm2-docker start /app/ecosystem.config.js --env=production
+
