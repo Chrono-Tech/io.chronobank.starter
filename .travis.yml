@@ -1,0 +1,29 @@
+sudo: required
+services:
+  - docker
+script:
+jobs:
+  include:
+    - stage: build docker image
+      script:
+        - FULL_GCR_KEY="-----BEGIN PRIVATE KEY-----\n"$GCR_KEY"\n-----END PRIVATE KEY-----\n"
+        - sed -i -e "s%\PWD%$FULL_GCR_KEY%g" gcregistry.json
+        - sed -i -e "s%branch%$TRAVIS_BRANCH%g" Dockerfile
+        - docker login -u _json_key -p "$(cat gcregistry.json)" https://gcr.io
+        - rm -rf gcregistry.json
+        - |
+          if [ "$TRAVIS_TAG" == "" ]; then
+            IMAGE_TAG_NAME="latest"
+          elif [ "$TRAVIS_TAG" != "" ]; then
+            IMAGE_TAG_NAME="$TRAVIS_TAG"
+          fi;
+        - |
+          if [ "$TRAVIS_BRANCH" == "master" ]; then
+            IMAGE_TAG_NAME="latest"
+            docker build --quiet -t gcr.io/deep-wares-144610/$TRAVIS_BRANCH/chronobank.io:$IMAGE_TAG_NAME .
+            docker push gcr.io/deep-wares-144610/$TRAVIS_BRANCH/chronobank.io:$IMAGE_TAG_NAME
+          elif [ "$TRAVIS_BRANCH" == "develop" ]; then
+            IMAGE_TAG_NAME="latest"
+            docker build --quiet -t gcr.io/deep-wares-144610/$TRAVIS_BRANCH/chronobank.io:$IMAGE_TAG_NAME .
+            docker push gcr.io/deep-wares-144610/$TRAVIS_BRANCH/chronobank.io:$IMAGE_TAG_NAME
+          fi;
