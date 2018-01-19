@@ -1,6 +1,10 @@
 sudo: required
 services:
   - docker
+branches:
+  only:
+    - master
+    - develop
 script:
 jobs:
   include:
