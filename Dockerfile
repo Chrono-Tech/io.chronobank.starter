@@ -7,15 +7,14 @@ RUN apt update && \
     npm install -g pm2@2.7.1 && \
     git clone https://github.com/ChronoBank/io.chronobank.web.git && \
     git clone https://github.com/ChronoBank/io.chronobank.backend.git && \
-    cd io.chronobank.web && \ 
-    npm install eslint@^3.0.0 && \
+    cd io.chronobank.web && \
+    npm install eslint@^4.9.0 && \
     npm install --unsafe-perm=true && \
     npm install -g cross-env && \
     npm list && \
-    npm run build:prod && \ 
+    npm run build:prod && \
     cd ../io.chronobank.backend && \
     yarn install --unsafe-perm=true
 EXPOSE 3000 3001 3010 3011
 RUN echo "test"
 CMD pm2-docker start /app/ecosystem.config.js --env=production
-
