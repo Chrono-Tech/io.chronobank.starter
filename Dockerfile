@@ -12,7 +12,7 @@ RUN apt update && \
     npm install --unsafe-perm=true && \
     npm install -g cross-env && \
     npm list && \
-    npm run build:prod && \
+    npm run build:demo && \
     cd ../io.chronobank.backend && \
     yarn install --unsafe-perm=true
 EXPOSE 3000 3001 3010 3011
