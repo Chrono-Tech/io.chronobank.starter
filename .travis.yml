@@ -24,10 +24,10 @@ jobs:
         - |
           if [ "$TRAVIS_BRANCH" == "master" ]; then
             IMAGE_TAG_NAME="latest"
-            docker build --quiet -t gcr.io/deep-wares-144610/$TRAVIS_BRANCH/chronobank.io:$IMAGE_TAG_NAME .
+            docker build --quiet --build-arg TYPE=prod -t gcr.io/deep-wares-144610/$TRAVIS_BRANCH/chronobank.io:$IMAGE_TAG_NAME .
             docker push gcr.io/deep-wares-144610/$TRAVIS_BRANCH/chronobank.io:$IMAGE_TAG_NAME
           elif [ "$TRAVIS_BRANCH" == "develop" ]; then
             IMAGE_TAG_NAME="latest"
-            docker build --quiet -t gcr.io/deep-wares-144610/$TRAVIS_BRANCH/chronobank.io:$IMAGE_TAG_NAME .
+            docker build --quiet --build-arg TYPE=demo -t gcr.io/deep-wares-144610/$TRAVIS_BRANCH/chronobank.io:$IMAGE_TAG_NAME .
             docker push gcr.io/deep-wares-144610/$TRAVIS_BRANCH/chronobank.io:$IMAGE_TAG_NAME
           fi;
