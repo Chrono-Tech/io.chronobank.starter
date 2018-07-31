@@ -1,6 +1,6 @@
 {
   "name": "io.chronobank.starter",
-  "version": "1.0.34",
+  "version": "1.0.38",
   "description": "",
   "main": "ecosystem.config.js",
   "scripts": {
